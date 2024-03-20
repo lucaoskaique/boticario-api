@@ -5,8 +5,9 @@
   "author": "lucaoskaique <lucas.kaique175@hotmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "",
-    "dev": ""
+    "dev": "tsx watch src/server.ts",
+    "start": "node build/server.js",
+    "build": "tsup src --out-dir build"
   },
   "dependencies": {
     "cors": "^2.8.5",
