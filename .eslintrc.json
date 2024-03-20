@@ -6,9 +6,11 @@
   },
   "extends": [
     "standard-with-typescript",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
   ],
-  "plugins": ["@typescript-eslint", "eslint-plugin-import-helpers"],
+  "plugins": ["@typescript-eslint", "eslint-plugin-import-helpers", "prettier"],
   "overrides": [],
   "parserOptions": {
     "project": "./tsconfig.json",
@@ -17,6 +19,17 @@
   },
   "parser": "@typescript-eslint/parser",
   "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "printWidth": 80,
+        "tabWidth": 2,
+        "singleQuote": true,
+        "trailingComma": "all",
+        "arrowParens": "always",
+        "semi": true
+      }
+    ],
     "@typescript-eslint/naming-convention": [
       "error",
       {
