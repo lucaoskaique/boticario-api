@@ -1,0 +1,7 @@
+{
+  "name": "boticario-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "lucaoskaique <lucas.kaique175@hotmail.com>",
+  "license": "MIT"
+}
