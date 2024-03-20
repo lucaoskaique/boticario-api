@@ -3,5 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "lucaoskaique <lucas.kaique175@hotmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.0"
+  }
 }
