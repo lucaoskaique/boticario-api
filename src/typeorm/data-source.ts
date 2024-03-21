@@ -1,3 +1,4 @@
+import { Address } from '@modules/clients/infra/typeorm/entities/Address';
 import { Client } from '@modules/clients/infra/typeorm/entities/Client';
 import { DataSource } from 'typeorm';
 
@@ -16,7 +17,7 @@ export const AppDataSource = new DataSource({
   database: 'boticario',
   synchronize: true,
   logging: false,
-  entities: [Client],
+  entities: [Client, Address],
   subscribers: [],
   migrations: [
     CreateClients1710986173055,
