@@ -43,11 +43,17 @@ export class CreateClients1710986173055 implements MigrationInterface {
             type: 'timestamp',
           },
           {
-            name: 'adress_id',
+            name: 'address_id',
             type: 'uuid',
+            isNullable: true,
           },
           {
             name: 'created_at',
+            type: 'timestamp',
+            default: 'now()',
+          },
+          {
+            name: 'updated_at',
             type: 'timestamp',
             default: 'now()',
           },
@@ -58,10 +64,10 @@ export class CreateClients1710986173055 implements MigrationInterface {
     await queryRunner.createForeignKey(
       'clients',
       new TableForeignKey({
-        name: 'FKAdress',
-        referencedTableName: 'adress',
+        name: 'FKAddress',
+        referencedTableName: 'addresses',
         referencedColumnNames: ['id'],
-        columnNames: ['adress_id'],
+        columnNames: ['address_id'],
         onDelete: 'SET NULL',
         onUpdate: 'SET NULL',
       }),
