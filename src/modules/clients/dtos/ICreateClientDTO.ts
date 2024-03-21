@@ -5,7 +5,7 @@ interface ICreateClientDTO {
   cpf: string;
   phone: string;
   birth_date: Date;
-  address_id?: string;
+  address_id: string;
 }
 
 export type { ICreateClientDTO };

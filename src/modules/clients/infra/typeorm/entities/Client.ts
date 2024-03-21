@@ -1,5 +1,14 @@
-import { Column, CreateDateColumn, Entity, PrimaryColumn } from 'typeorm';
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  JoinColumn,
+  ManyToOne,
+  PrimaryColumn,
+} from 'typeorm';
 import { v4 as uuidV4 } from 'uuid';
+
+import { Address } from './Address';
 
 @Entity('clients')
 class Client {
@@ -24,8 +33,12 @@ class Client {
   @Column('date')
   birth_date: Date;
 
-  @Column('integer')
-  address_id?: string;
+  @ManyToOne(() => Address)
+  @JoinColumn({ name: 'address_id' })
+  address: Address;
+
+  @Column('varchar')
+  address_id: string;
 
   @CreateDateColumn()
   created_at: Date;
