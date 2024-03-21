@@ -3,28 +3,28 @@ import { v4 as uuidV4 } from 'uuid';
 
 @Entity('clients')
 class Client {
-  @PrimaryColumn()
+  @PrimaryColumn('uuid')
   id: string;
 
-  @Column()
+  @Column('varchar')
   username: string;
 
-  @Column()
+  @Column('varchar')
   email: string;
 
-  @Column()
+  @Column('varchar')
   password: string;
 
-  @Column()
+  @Column('varchar')
   cpf: string;
 
-  @Column()
+  @Column('varchar')
   phone: string;
 
-  @Column()
+  @Column('date')
   birth_date: Date;
 
-  @Column()
+  @Column('integer')
   address_id?: string;
 
   @CreateDateColumn()
