@@ -29,7 +29,7 @@ export class CreateAddresses1710985056783 implements MigrationInterface {
           },
           {
             name: 'street_number',
-            type: 'number',
+            type: 'integer',
           },
           {
             name: 'complement',
