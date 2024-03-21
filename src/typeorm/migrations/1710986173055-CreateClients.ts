@@ -5,7 +5,7 @@ import {
   TableForeignKey,
 } from 'typeorm';
 
-export class CreateClients1710984645200 implements MigrationInterface {
+export class CreateClients1710986173055 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
@@ -44,7 +44,7 @@ export class CreateClients1710984645200 implements MigrationInterface {
           },
           {
             name: 'adress_id',
-            type: 'number',
+            type: 'uuid',
           },
           {
             name: 'created_at',

@@ -1,8 +1,7 @@
-import path from 'path';
 import { DataSource } from 'typeorm';
 
 import {
-  CreateClients1710984645200,
+  CreateClients1710986173055,
   CreateAddresses1710985056783,
   CreateCategories1710967133852,
 } from './migrations';
@@ -19,7 +18,7 @@ export const AppDataSource = new DataSource({
   entities: [],
   subscribers: [],
   migrations: [
-    CreateClients1710984645200,
+    CreateClients1710986173055,
     CreateAddresses1710985056783,
     CreateCategories1710967133852,
   ],
