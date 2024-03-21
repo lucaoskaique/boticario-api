@@ -1,7 +1,8 @@
-import 'reflect-metadata';
 import cors from 'cors';
 import express from 'express';
 import 'dotenv/config';
+import { routes } from 'routes';
+import 'reflect-metadata';
 
 const app = express();
 
@@ -9,8 +10,6 @@ app.use(express.json());
 
 app.use(cors());
 
-app.get('/', (request, response) => {
-  return response.json({ message: 'Hello World DEV EM DOBRO' });
-});
+app.use(routes);
 
 export { app };
