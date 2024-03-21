@@ -57,7 +57,8 @@
         "groups": ["module", "/^@shared/", ["parent", "sibling", "index"]],
         "alphabetize": { "order": "asc", "ignoreCase": true }
       }
-    ]
+    ],
+    "@typescript-eslint/strict-boolean-expressions": "off"
   },
   "settings": {
     "import/parsers": {
