@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "tsx watch src/server.ts",
+    "typeorm": "tsx ./node_modules/typeorm/cli.js",
     "start": "node build/server.js",
     "build": "tsup src --out-dir build"
   },
