@@ -35,11 +35,6 @@ export class CreateClients1710965842166 implements MigrationInterface {
             isUnique: true,
           },
           {
-            name: 'isAdmin',
-            type: 'boolean',
-            default: false,
-          },
-          {
             name: 'phone',
             type: 'varchar',
           },
