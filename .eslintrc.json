@@ -32,6 +32,8 @@
     ],
     "@typescript-eslint/no-misused-promises": "off",
     "@typescript-eslint/unbound-method": "off",
+    "@typescript-eslint/prefer-readonly": "off",
+    "@typescript-eslint/no-throw-literal": "off",
     "@typescript-eslint/naming-convention": [
       "error",
       {
