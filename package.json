@@ -8,7 +8,8 @@
     "dev": "tsx watch src/server.ts",
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
     "typeorm:create": "ts-node-dev ./node_modules/typeorm/cli.js  migration:create",
-    "typeorm:run": "ts-node-dev ./node_modules/typeorm/cli.js -d ./src/database/data-source.ts migration:run",
+    "typeorm:run": "ts-node-dev ./node_modules/typeorm/cli.js -d ./src/typeorm/data-source.ts migration:run",
+    "typeorm:show": "ts-node-dev ./node_modules/typeorm/cli.js -d ./src/typeorm/data-source.ts migration:show",
     "start": "node build/server.js",
     "build": "tsup src --out-dir build"
   },
