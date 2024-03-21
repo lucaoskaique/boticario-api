@@ -49,10 +49,7 @@
     "class-methods-use-this": "off",
     "import/prefer-default-export": "off",
     "no-useless-constructor": "off",
-    "import/no-extraneous-dependencies": [
-      "error",
-      { "devDependencies": ["**/*.spec.js"] }
-    ],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "import-helpers/order-imports": [
       "warn",
       {
