@@ -30,6 +30,8 @@
         "semi": true
       }
     ],
+    "@typescript-eslint/no-misused-promises": "off",
+    "@typescript-eslint/unbound-method": "off",
     "@typescript-eslint/naming-convention": [
       "error",
       {
