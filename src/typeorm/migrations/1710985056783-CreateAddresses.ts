@@ -14,30 +14,37 @@ export class CreateAddresses1710985056783 implements MigrationInterface {
           {
             name: 'cep',
             type: 'varchar',
+            isNullable: true,
           },
           {
             name: 'street',
             type: 'varchar',
+            isNullable: true,
           },
           {
             name: 'neighborhood',
             type: 'varchar',
+            isNullable: true,
           },
           {
             name: 'city',
             type: 'varchar',
+            isNullable: true,
           },
           {
             name: 'street_number',
             type: 'integer',
+            isNullable: true,
           },
           {
             name: 'complement',
             type: 'varchar',
+            isNullable: true,
           },
           {
             name: 'uf',
             type: 'varchar',
+            isNullable: true,
           },
           {
             name: 'created_at',
