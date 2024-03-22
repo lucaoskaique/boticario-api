@@ -19,14 +19,18 @@ export class CreateOrders1711055979051 implements MigrationInterface {
           {
             name: 'order_number',
             type: 'varchar',
+            isNullable: true,
           },
           {
             name: 'amount',
             type: 'numeric',
+            isNullable: true,
           },
           {
             name: 'status',
-            type: 'varchar',
+            type: 'enum',
+            enum: ['pending', 'approved', 'shipped', 'delivered', 'cancelled'],
+            default: "'pending'",
           },
           {
             name: 'order_date',
