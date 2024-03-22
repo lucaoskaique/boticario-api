@@ -1,11 +1,11 @@
 import {
+  TableForeignKey,
   type MigrationInterface,
   type QueryRunner,
   Table,
-  TableForeignKey,
 } from 'typeorm';
 
-export class CreateProductsOrders1711056023738 implements MigrationInterface {
+export class CreateProductsOrders1711078262488 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
