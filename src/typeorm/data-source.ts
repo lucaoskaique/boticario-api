@@ -1,11 +1,12 @@
-import { Address } from '@modules/clients/infra/typeorm/entities/Address';
-import { Client } from '@modules/clients/infra/typeorm/entities/Client';
 import { DataSource } from 'typeorm';
 
 import {
   CreateClients1710986173055,
   CreateAddresses1710985056783,
   CreateCategories1710967133852,
+  CreateOrders1711055979051,
+  CreateProducts1711056044522,
+  CreateProductsOrders1711078262488,
 } from './migrations';
 
 export const AppDataSource = new DataSource({
@@ -17,11 +18,14 @@ export const AppDataSource = new DataSource({
   database: 'boticario',
   synchronize: true,
   logging: false,
-  entities: [Client, Address],
+  entities: ['src/modules/**/infra/typeorm/entities/*.ts'],
   subscribers: [],
   migrations: [
     CreateClients1710986173055,
     CreateAddresses1710985056783,
     CreateCategories1710967133852,
+    CreateOrders1711055979051,
+    CreateProducts1711056044522,
+    CreateProductsOrders1711078262488,
   ],
 });
