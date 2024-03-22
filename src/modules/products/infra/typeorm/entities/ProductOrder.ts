@@ -15,10 +15,10 @@ class ProductOrder {
   @Column('varchar')
   order_id: string;
 
-  @Column('numeric')
+  @Column({ type: 'decimal', nullable: true })
   product_price: number;
 
-  @Column('integer')
+  @Column({ type: 'integer', nullable: true })
   product_count: number;
 
   @ManyToOne(() => Product)
