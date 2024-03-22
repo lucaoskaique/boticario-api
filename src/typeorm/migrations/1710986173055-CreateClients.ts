@@ -26,8 +26,14 @@ export class CreateClients1710986173055 implements MigrationInterface {
             type: 'varchar',
           },
           {
+            name: 'name',
+            type: 'varchar',
+            isNullable: true,
+          },
+          {
             name: 'email',
             type: 'varchar',
+            isNullable: true,
           },
           {
             name: 'cpf',
@@ -37,15 +43,16 @@ export class CreateClients1710986173055 implements MigrationInterface {
           {
             name: 'phone',
             type: 'varchar',
+            isNullable: true,
           },
           {
             name: 'birth_date',
             type: 'timestamp',
+            isNullable: true,
           },
           {
             name: 'address_id',
             type: 'uuid',
-            isNullable: true,
           },
           {
             name: 'created_at',
