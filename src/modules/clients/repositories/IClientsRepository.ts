@@ -6,6 +6,7 @@ interface IClientsRepository {
   findByEmail: (email: string) => Promise<Client | null>;
   findById: (id: string) => Promise<Client | null>;
   list: () => Promise<Client[]> | [];
+  update: (data: Client) => Promise<Client>;
 }
 
 export type { IClientsRepository };

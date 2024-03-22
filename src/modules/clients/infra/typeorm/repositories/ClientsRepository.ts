@@ -51,6 +51,12 @@ class ClientsRepository implements IClientsRepository {
   async list(): Promise<Client[]> {
     return await this.repository.find();
   }
+
+  async update(client: Client): Promise<Client> {
+    await this.repository.save(client);
+
+    return client;
+  }
 }
 
 export { ClientsRepository };
