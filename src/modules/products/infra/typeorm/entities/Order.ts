@@ -10,19 +10,31 @@ import { v4 as uuidV4 } from 'uuid';
 
 import { ProductOrder } from './ProductOrder';
 
+export enum OrderStatus {
+  PENDING = 'pending',
+  APPROVED = 'approved',
+  SHIPPED = 'shipped',
+  DELIVERED = 'delivered',
+  CANCELLED = 'cancelled',
+}
+
 @Entity('orders')
 class Order {
   @PrimaryColumn('uuid')
   id: string;
 
-  @Column('varchar')
+  @Column({ type: 'varchar', nullable: true })
   order_number: string;
 
-  @Column('numeric')
+  @Column({ type: 'numeric', nullable: true })
   amount: number;
 
-  @Column('varchar')
-  status: string;
+  @Column({
+    type: 'enum',
+    enum: OrderStatus,
+    default: OrderStatus.PENDING,
+  })
+  status: OrderStatus;
 
   @Column('timestamp')
   order_date: Date;
