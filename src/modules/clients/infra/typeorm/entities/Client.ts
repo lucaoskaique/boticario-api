@@ -16,22 +16,25 @@ class Client {
   @PrimaryColumn('uuid')
   id: string;
 
-  @Column('varchar')
+  @Column({ type: 'varchar', unique: true })
   username: string;
 
-  @Column('varchar')
+  @Column({ type: 'varchar', nullable: true })
+  name: string;
+
+  @Column({ type: 'varchar', nullable: true })
   email: string;
 
-  @Column('varchar')
+  @Column({ type: 'varchar' })
   password: string;
 
-  @Column('varchar')
+  @Column({ type: 'varchar', unique: true })
   cpf: string;
 
-  @Column('varchar')
+  @Column({ type: 'varchar', nullable: true })
   phone: string;
 
-  @Column('date')
+  @Column({ type: 'timestamp', nullable: true })
   birth_date: Date;
 
   @ManyToOne(() => Address)
