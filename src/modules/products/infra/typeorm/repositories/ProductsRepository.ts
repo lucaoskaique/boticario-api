@@ -5,7 +5,7 @@ import { AppDataSource } from 'typeorm/data-source';
 
 import { Product } from '../entities/Product';
 
-class ProductRepository implements IProductsRepository {
+class ProductsRepository implements IProductsRepository {
   private repository: Repository<Product>;
 
   constructor() {
@@ -48,4 +48,4 @@ class ProductRepository implements IProductsRepository {
   }
 }
 
-export { ProductRepository };
+export { ProductsRepository };
