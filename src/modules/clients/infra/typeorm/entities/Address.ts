@@ -12,25 +12,25 @@ class Address {
   @PrimaryColumn('uuid')
   id: string;
 
-  @Column('varchar')
+  @Column({ type: 'varchar', nullable: true })
   cep: string;
 
-  @Column('varchar')
+  @Column({ type: 'varchar', nullable: true })
   street: string;
 
-  @Column('varchar')
+  @Column({ type: 'varchar', nullable: true })
   neighborhood: string;
 
-  @Column('varchar')
+  @Column({ type: 'varchar', nullable: true })
   city: string;
 
-  @Column('integer')
+  @Column({ type: 'integer', nullable: true })
   street_number: number;
 
-  @Column('varchar')
+  @Column({ type: 'varchar', nullable: true })
   complement: string;
 
-  @Column('varchar')
+  @Column({ type: 'varchar', nullable: true })
   uf: string;
 
   @CreateDateColumn()
