@@ -27,10 +27,12 @@ export class CreateProductsOrders1711078262488 implements MigrationInterface {
           {
             name: 'product_price',
             type: 'decimal',
+            isNullable: true,
           },
           {
             name: 'product_count',
             type: 'decimal',
+            isNullable: true,
           },
           {
             name: 'created_at',
