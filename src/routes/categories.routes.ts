@@ -1,5 +1,5 @@
 import { CreateCategoryController } from '@modules/products/useCases/createCategory/CreateCategoryController';
-import { ListCategoryController } from '@modules/products/useCases/listCategory/ListCategoryController';
+import { ListCategoryController } from '@modules/products/useCases/listCategories/ListCategoryController';
 import { Router } from 'express';
 
 const categoriesRoutes = Router();
