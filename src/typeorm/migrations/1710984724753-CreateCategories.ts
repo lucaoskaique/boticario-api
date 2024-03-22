@@ -18,6 +18,7 @@ export class CreateCategories1710967133852 implements MigrationInterface {
           {
             name: 'description',
             type: 'varchar',
+            isNullable: true,
           },
           {
             name: 'created_at',
