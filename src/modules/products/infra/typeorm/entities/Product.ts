@@ -18,16 +18,16 @@ class Product {
   @PrimaryColumn('uuid')
   id: string;
 
-  @Column('varchar')
+  @Column({ type: 'varchar', nullable: true })
   name: string;
 
-  @Column('varchar')
+  @Column({ type: 'varchar', nullable: true })
   description: string;
 
-  @Column('numeric')
+  @Column({ type: 'numeric', nullable: true })
   price: number;
 
-  @Column('integer')
+  @Column({ type: 'integer', nullable: true })
   inventory_count: number;
 
   @ManyToOne(() => Category)
@@ -37,7 +37,7 @@ class Product {
   @Column('varchar')
   category_id: string;
 
-  @Column('varchar')
+  @Column({ type: 'varchar', nullable: true })
   image_url: string;
 
   @CreateDateColumn()
