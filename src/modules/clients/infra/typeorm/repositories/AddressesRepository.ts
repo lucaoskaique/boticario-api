@@ -37,6 +37,12 @@ class AddressesRepository implements IAddressesRepository {
   async list(): Promise<Address[]> {
     return await this.repository.find();
   }
+
+  async update(address: Address): Promise<Address> {
+    await this.repository.save(address);
+
+    return address;
+  }
 }
 
 export { AddressesRepository };
