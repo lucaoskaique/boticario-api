@@ -20,6 +20,7 @@ class ClientsRepository implements IClientsRepository {
     password,
     phone,
     address_id,
+    name,
   }: ICreateClientDTO): Promise<void> {
     const client = this.repository.create({
       username,
@@ -29,6 +30,7 @@ class ClientsRepository implements IClientsRepository {
       password,
       phone,
       address_id,
+      name,
     });
 
     await this.repository.save(client);
