@@ -50,7 +50,7 @@ class Order {
 
   // Relacionamento com ProductOrder
   @ManyToOne(() => ProductOrder, (productOrder) => productOrder.order)
-  productOrders: ProductOrder[];
+  productOrders?: ProductOrder[];
 
   constructor() {
     if (!this.id) {
