@@ -1,7 +1,8 @@
-import { AppError } from '@errors/AppError';
 import { type Client } from '@modules/clients/infra/typeorm/entities/Client';
 import { IClientsRepository } from '@modules/clients/repositories/IClientsRepository';
 import { inject, injectable } from 'tsyringe';
+
+import { AppError } from '@shared/errors/AppError';
 
 interface IUpdateClientDTO {
   id: string;
