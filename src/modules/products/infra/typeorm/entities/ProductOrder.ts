@@ -21,13 +21,13 @@ class ProductOrder {
   @Column({ type: 'integer', nullable: true })
   product_count: number;
 
-  @ManyToOne(() => Product)
+  @ManyToOne(() => Product, (product) => product.productOrders)
   @JoinColumn({ name: 'product_id' })
-  product: Product;
+  product?: Product;
 
-  @ManyToOne(() => Order)
+  @ManyToOne(() => Order, (order) => order.productOrders)
   @JoinColumn({ name: 'order_id' })
-  order: Order;
+  order?: Order;
 
   constructor() {
     if (!this.id) {
