@@ -43,6 +43,12 @@ class AddressesRepository implements IAddressesRepository {
 
     return address;
   }
+
+  async findById(id: string): Promise<Address | null> {
+    const address = await this.repository.findOne({ where: { id } });
+
+    return address;
+  }
 }
 
 export { AddressesRepository };
