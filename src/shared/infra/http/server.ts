@@ -1,5 +1,4 @@
-import { AppDataSource } from 'typeorm/data-source';
-
+import { AppDataSource } from '../typeorm/data-source';
 import { app } from './app';
 import { env } from './env';
 

@@ -6,7 +6,7 @@ import { routes } from '@shared/infra/http/routes';
 
 import 'reflect-metadata';
 import 'express-async-errors';
-import './shared/container';
+import '@shared/container';
 import { errorHandler } from './middlewares/errors';
 
 const app = express();
