@@ -5,7 +5,7 @@ import 'dotenv/config';
 import { routes } from 'routes';
 import 'reflect-metadata';
 import 'express-async-errors';
-import './container';
+import './shared/container';
 
 const app = express();
 
