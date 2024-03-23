@@ -1,11 +1,13 @@
 import cors from 'cors';
 import express from 'express';
-import { errorHandler } from 'middlewares/errors';
+
 import 'dotenv/config';
-import { routes } from 'routes';
+import { routes } from '@shared/infra/http/routes';
+
 import 'reflect-metadata';
 import 'express-async-errors';
 import './shared/container';
+import { errorHandler } from './middlewares/errors';
 
 const app = express();
 
