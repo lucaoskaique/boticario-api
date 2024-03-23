@@ -1,8 +1,9 @@
-import { AppError } from '@errors/AppError';
 import { type ICreateClientDTO } from '@modules/clients/dtos/ICreateClientDTO';
 import { IClientsRepository } from '@modules/clients/repositories/IClientsRepository';
 import { hash } from 'bcrypt';
 import { inject, injectable } from 'tsyringe';
+
+import { AppError } from '@shared/errors/AppError';
 
 @injectable()
 class CreateClientUseCase {
