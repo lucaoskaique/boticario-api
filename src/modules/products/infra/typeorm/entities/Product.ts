@@ -47,7 +47,7 @@ class Product {
   updated_at: Date;
 
   @OneToMany(() => ProductOrder, (productOrder) => productOrder.product)
-  productOrders: ProductOrder[];
+  productOrders?: ProductOrder[];
 
   constructor() {
     if (!this.id) {
