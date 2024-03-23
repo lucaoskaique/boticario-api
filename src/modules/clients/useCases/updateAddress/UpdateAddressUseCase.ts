@@ -1,7 +1,8 @@
-import { AppError } from '@errors/AppError';
 import { type Address } from '@modules/clients/infra/typeorm/entities/Address';
 import { IAddressesRepository } from '@modules/clients/repositories/IAddressesRepository';
 import { inject, injectable } from 'tsyringe';
+
+import { AppError } from '@shared/errors/AppError';
 
 interface IUpdateAddressDTO {
   id: string;
