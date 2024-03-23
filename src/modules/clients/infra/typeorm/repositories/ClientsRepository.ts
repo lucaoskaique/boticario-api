@@ -36,8 +36,8 @@ class ClientsRepository implements IClientsRepository {
     await this.repository.save(client);
   }
 
-  async findByEmail(email: string): Promise<Client | null> {
-    const client = await this.repository.findOneBy({ email });
+  async findByUsername(username: string): Promise<Client | null> {
+    const client = await this.repository.findOneBy({ username });
 
     return client;
   }
