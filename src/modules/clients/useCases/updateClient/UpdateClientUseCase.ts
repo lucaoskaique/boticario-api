@@ -8,6 +8,9 @@ interface IUpdateClientDTO {
   name: string;
   email: string;
   password: string;
+  phone: string;
+  birth_date: Date;
+  address_id: string;
 }
 
 @injectable()
