@@ -1,12 +1,24 @@
 import { type Request, type Response } from 'express';
 import { container } from 'tsyringe';
+import { z } from 'zod';
 
 import { UpdateClientUseCase } from './UpdateClientUseCase';
 
 class UpdateClientController {
   async handle(request: Request, response: Response): Promise<Response> {
-    const { id } = request.params;
-    const { name, email, password } = request.body;
+    const updateClientBodySchema = z.object({
+      name: z.string(),
+      email: z.string(),
+      password: z.string(),
+      phone: z.string(),
+      birth_date: z.date(),
+      address_id: z.string(),
+    });
+
+    const { name, email, password, phone, birth_date, address_id } =
+      updateClientBodySchema.parse(request.body);
+
+    const id = z.string().parse(request.params.id);
 
     const updateClientUseCase = container.resolve(UpdateClientUseCase);
 
@@ -15,6 +27,9 @@ class UpdateClientController {
       name,
       email,
       password,
+      phone,
+      birth_date,
+      address_id,
     });
 
     return response.json(client);
