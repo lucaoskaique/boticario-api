@@ -1,7 +1,8 @@
 import { type ICreateClientDTO } from '@modules/clients/dtos/ICreateClientDTO';
 import { type IClientsRepository } from '@modules/clients/repositories/IClientsRepository';
 import { type Repository } from 'typeorm';
-import { AppDataSource } from 'typeorm/data-source';
+
+import { AppDataSource } from '@shared/infra/typeorm/data-source';
 
 import { Client } from '../entities/Client';
 
