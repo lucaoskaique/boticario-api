@@ -1,7 +1,8 @@
 import { type ICreateProductsOrdersDTO } from '@modules/products/dtos/ICreateProductsOrdersDTO';
 import { type IProductsOrdersRepository } from '@modules/products/repositories/IProductsOrdersRepository';
 import { type Repository } from 'typeorm';
-import { AppDataSource } from 'typeorm/data-source';
+
+import { AppDataSource } from '@shared/infra/typeorm/data-source';
 
 import { ProductOrder } from '../entities/ProductOrder';
 
