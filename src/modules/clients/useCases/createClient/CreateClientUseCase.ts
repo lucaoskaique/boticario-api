@@ -20,7 +20,8 @@ class CreateClientUseCase {
     birth_date,
     address_id,
   }: ICreateClientDTO): Promise<void> {
-    const clientAlreadyExists = await this.clientsRepository.findByEmail(email);
+    const clientAlreadyExists =
+      await this.clientsRepository.findByUsername(username);
 
     if (clientAlreadyExists) {
       throw new AppError('Client already exists');
