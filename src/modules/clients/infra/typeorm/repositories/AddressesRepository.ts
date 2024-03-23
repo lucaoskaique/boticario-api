@@ -1,7 +1,8 @@
 import { type ICreateAddressDTO } from '@modules/clients/dtos/ICreateAddressDTO';
 import { type IAddressesRepository } from '@modules/clients/repositories/IAddressesRepository';
 import { type Repository } from 'typeorm';
-import { AppDataSource } from 'typeorm/data-source';
+
+import { AppDataSource } from '@shared/infra/typeorm/data-source';
 
 import { Address } from '../entities/Address';
 
