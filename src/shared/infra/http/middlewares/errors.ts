@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
-import { env } from 'env';
 import { type NextFunction, type Request, type Response } from 'express';
 import { ZodError } from 'zod';
 
 import { AppError } from '@shared/errors/AppError';
+import { env } from '@shared/infra/http/env';
 
 export const errorHandler = (
   err: Error,
