@@ -1,20 +1,33 @@
+/* eslint-disable @typescript-eslint/consistent-type-assertions */
 import crypto from 'crypto';
-import multer from 'multer';
-import { resolve } from 'path';
+import multer, { type StorageEngine } from 'multer';
+import path from 'path';
+
+const tmpFolder = path.resolve(__dirname, '..', '..', 'src', 'tmp');
+
+interface IUploadConfig {
+  tmpFolder: string;
+  uploadsFolder: string;
+
+  multer: {
+    storage: StorageEngine;
+  };
+}
 
 export default {
-  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-  upload(folder: string) {
-    return {
-      storage: multer.diskStorage({
-        destination: resolve(__dirname, '..', '..', folder),
-        filename: (request, file, callback) => {
-          const fileHash = crypto.randomBytes(16).toString('hex');
-          const fileName = `${fileHash}-${file.originalname}`;
+  driver: 'disk',
+  tmpFolder,
+  uploadsFolder: path.resolve(tmpFolder),
 
-          return callback(null, fileName);
-        },
-      }),
-    };
+  multer: {
+    storage: multer.diskStorage({
+      destination: tmpFolder,
+      filename(request, file, callback) {
+        const fileHash = crypto.randomBytes(10).toString('hex');
+        const fileName = `${fileHash}-${file.originalname}`;
+
+        callback(null, fileName);
+      },
+    }),
   },
-};
+} as IUploadConfig;
