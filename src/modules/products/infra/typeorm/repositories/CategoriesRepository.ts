@@ -1,7 +1,8 @@
 import { type ICreateCategoryDTO } from '@modules/products/dtos/ICreateCategoryDTO';
 import { type ICategoriesRepository } from '@modules/products/repositories/ICategoriesRepository';
 import { type Repository } from 'typeorm';
-import { AppDataSource } from 'typeorm/data-source';
+
+import { AppDataSource } from '@shared/infra/typeorm/data-source';
 
 import { Category } from '../entities/Category';
 
