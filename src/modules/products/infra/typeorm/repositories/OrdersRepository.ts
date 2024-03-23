@@ -1,7 +1,8 @@
 import { type ICreateOrderDTO } from '@modules/products/dtos/ICreateOrderDTO';
 import { type IOrdersRepository } from '@modules/products/repositories/IOrdersRepository';
 import { type Repository } from 'typeorm';
-import { AppDataSource } from 'typeorm/data-source';
+
+import { AppDataSource } from '@shared/infra/typeorm/data-source';
 
 import { Order } from '../entities/Order';
 
