@@ -1,8 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 
-import uploadConfig from '../../config/upload';
-import { type IStorageProvider } from './IStorageProvider';
+import uploadConfig from '../../../config/upload';
+import { type IStorageProvider } from './StorageProvider/IStorageProvider';
 
 export class DiskStorageProvider implements IStorageProvider {
   public async saveFile(file: string): Promise<string> {
