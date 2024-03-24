@@ -19,18 +19,22 @@
   - [x] Criar controller
   - [x] Criar use case
   - [x] Criar repository
+  - [ ] Criar InMemoryRepository
 - [X] RF2: Ler informações de um cliente existente.
   - [x] Criar controller
   - [x] Criar use case
   - [x] Criar repository
+  - [ ] Criar InMemoryRepository
 - [X] RF3: Atualizar informações de um cliente existente.
   - [x] Criar controller
   - [x] Criar use case
   - [x] Criar repository
+  - [ ] Criar InMemoryRepository
 - [X] RF4: Excluir um cliente existente.
   - [x] Criar controller
   - [x] Criar use case
   - [x] Criar repository
+  - [ ] Criar InMemoryRepository
 
 ### Entidade: Addresses
 #### CRUD (Create, Read, Update, Delete)
@@ -39,18 +43,22 @@
   - [x] Criar controller
   - [x] Criar use case
   - [x] Criar repository
+  - [ ] Criar InMemoryRepository
 - [X] RF6: Ler informações de um endereço existente.
   - [x] Criar controller
   - [x] Criar use case
   - [x] Criar repository
+  - [ ] Criar InMemoryRepository
 - [X] RF7: Atualizar informações de um endereço existente.
   - [x] Criar controller
   - [x] Criar use case
   - [x] Criar repository
+  - [ ] Criar InMemoryRepository
 - [X] RF8: Excluir um endereço existente.
   - [x] Criar controller
   - [x] Criar use case
   - [x] Criar repository
+  - [ ] Criar InMemoryRepository
 
 ### Entidade: Orders
 #### CRUD (Create, Read, Update, Delete)
@@ -59,10 +67,12 @@
   - [x] Criar controller
   - [x] Criar use case
   - [x] Criar repository
+  - [ ] Criar InMemoryRepository
 - [X] RF10: Ler informações de um pedido existente.
   - [x] Criar controller
   - [x] Criar use case
   - [x] Criar repository
+  - [ ] Criar InMemoryRepository
 - [ ] RF11: Atualizar informações de um pedido existente.
   - [] Criar controller
   - [] Criar use case
@@ -79,38 +89,46 @@
   - [X] Criar controller
   - [X] Criar use case
   - [X] Criar repository
+  - [ ] Criar InMemoryRepository
 - [X] RF14: Ler informações de um produto existente.
   - [X] Criar controller
   - [X] Criar use case
   - [X] Criar repository
+  - [ ] Criar InMemoryRepository
 - [X] RF15: Atualizar informações de um produto existente.
   - [X] Criar controller
   - [X] Criar use case
   - [X] Criar repository
+  - [ ] Criar InMemoryRepository
 - [X] RF16: Excluir um produto existente.
   - [X] Criar controller
   - [X] Criar use case
   - [X] Criar repository
+  - [ ] Criar InMemoryRepository
 
 ### Entidade: Categories
 #### CRUD (Create, Read, Update, Delete)
 
 - [X] RF17: Criar uma nova categoria.
-  - [] Criar controller
-  - [] Criar use case
-  - [] Criar repository
+  - [X] Criar controller
+  - [X] Criar use case
+  - [X] Criar repository
+  - [ ] Criar InMemoryRepository
 - [X] RF18: Ler informações de uma categoria existente.
-  - [] Criar controller
-  - [] Criar use case
-  - [] Criar repository
+  - [X] Criar controller
+  - [X] Criar use case
+  - [X] Criar repository
+  - [ ] Criar InMemoryRepository
 - [X] RF19: Atualizar informações de uma categoria existente.
-  - [] Criar controller
-  - [] Criar use case
-  - [] Criar repository
+  - [X] Criar controller
+  - [X] Criar use case
+  - [X] Criar repository
+  - [ ] Criar InMemoryRepository
 - [X] RF20: Excluir uma categoria existente.
-  - [] Criar controller
-  - [] Criar use case
-  - [] Criar repository
+  - [X] Criar controller
+  - [X] Criar use case
+  - [X] Criar repository
+  - [ ] Criar InMemoryRepository
 
 ### Entidade: ProductOrders
 #### CRUD (Create, Read, Update, Delete)
