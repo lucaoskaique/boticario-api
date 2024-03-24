@@ -13,6 +13,10 @@ class ProductsRepository implements IProductsRepository {
     this.repository = AppDataSource.getRepository(Product);
   }
 
+  public async delete(id: string): Promise<void> {
+    await this.repository.delete(id);
+  }
+
   public async findByName(name: string): Promise<Product | null> {
     const product = await this.repository.findOne({ where: { name } });
     return product;
