@@ -1,6 +1,5 @@
 import { type ICreateAddressDTO } from '@modules/clients/dtos/ICreateAddressDTO';
 import { Address } from '@modules/clients/infra/typeorm/entities/Address';
-import { v4 as uuid } from 'uuid';
 
 import { type IAddressesRepository } from '../IAddressesRepository';
 class AddressesRepositoryInMemory implements IAddressesRepository {
@@ -10,10 +9,7 @@ class AddressesRepositoryInMemory implements IAddressesRepository {
     const address = new Address();
 
     Object.assign(address, {
-      ...data,
-      id: uuid(),
-      created_at: new Date(),
-      updated_at: new Date(),
+      data,
     });
 
     this.addresses.push(address);
