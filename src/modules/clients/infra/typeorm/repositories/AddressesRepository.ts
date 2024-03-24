@@ -25,7 +25,7 @@ class AddressesRepository implements IAddressesRepository {
     neighborhood,
     city,
     uf,
-  }: ICreateAddressDTO): Promise<void> {
+  }: ICreateAddressDTO): Promise<Address> {
     const client = this.repository.create({
       cep,
       street,
@@ -37,6 +37,8 @@ class AddressesRepository implements IAddressesRepository {
     });
 
     await this.repository.save(client);
+
+    return client;
   }
 
   async list(): Promise<Address[]> {
