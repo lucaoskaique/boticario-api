@@ -13,6 +13,7 @@ interface IProductsRepository {
     category_id,
     image_url,
   }: ICreateProductDTO) => Promise<void>;
+  update: (product: Product) => Promise<void>;
 }
 
 export type { IProductsRepository };
