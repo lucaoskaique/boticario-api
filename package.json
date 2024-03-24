@@ -14,8 +14,9 @@
     "build": "tsup src --out-dir build",
     "test": "glob -c \"node --loader tsx --no-warnings --test\" \"./src/modules/**/useCase/**/*.test.ts\"",
     "test:jest": "cross-env NODE_ENV=test jest --runInBand --detectOpenHandles",
-    "seed:category": "ts-node-dev -r tsconfig-paths/register  src/shared/infra/typeorm/seed/categories.ts",
-    "seed:address": "ts-node-dev -r tsconfig-paths/register  src/shared/infra/typeorm/seed/addresses.ts"
+    "seed:products": "ts-node-dev -r tsconfig-paths/register  src/shared/infra/typeorm/seed/productCategories.ts",
+    "seed:clients": "ts-node-dev -r tsconfig-paths/register  src/shared/infra/typeorm/seed/clientAddresses.ts",
+    "seed": "yarn seed:products && yarn seed:clients"
   },
   "dependencies": {
     "aws-sdk": "^2.1584.0",
