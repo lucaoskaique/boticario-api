@@ -6,10 +6,29 @@ import { type IClientsRepository } from '../IClientsRepository';
 class ClientsRepositoryInMemory implements IClientsRepository {
   private clients: Client[] = [];
 
-  async create(data: ICreateClientDTO): Promise<void> {
+  async create({
+    username,
+    birth_date,
+    cpf,
+    email,
+    password,
+    phone,
+    address_id,
+    name,
+  }: ICreateClientDTO): Promise<Client> {
     const client = new Client();
-    Object.assign(client, data);
+    Object.assign(client, {
+      username,
+      birth_date,
+      cpf,
+      email,
+      password,
+      phone,
+      address_id,
+      name,
+    });
     this.clients.push(client);
+    return client;
   }
 
   async findByUsername(username: string): Promise<Client | null> {
