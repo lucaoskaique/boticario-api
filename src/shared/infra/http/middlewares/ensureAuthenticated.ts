@@ -4,6 +4,7 @@ import { type NextFunction, type Request, type Response } from 'express';
 import { verify } from 'jsonwebtoken';
 
 import { AppError } from '../../../errors/AppError';
+import { env } from '../env';
 
 interface IPayload {
   sub: string;
@@ -23,10 +24,7 @@ export async function ensureAuthenticated(
   const [, token] = authHeader.split(' ');
 
   try {
-    const { sub: client_id } = verify(
-      token,
-      '2e247e2eb505c42b362e80ed4d05b078',
-    ) as IPayload;
+    const { sub: client_id } = verify(token, env.JWT_SECRET) as IPayload;
 
     const clientsRepository = new ClientsRepository();
     const client = clientsRepository.findById(client_id);
