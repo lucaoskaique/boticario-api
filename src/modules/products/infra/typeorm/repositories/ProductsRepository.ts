@@ -1,4 +1,5 @@
 import { type ICreateProductDTO } from '@modules/products/dtos/ICreateProductDTO';
+import { type IListProductsDTO } from '@modules/products/dtos/IListProductsDTO';
 import { type IProductsRepository } from '@modules/products/repositories/IProductsRepository';
 import { type Repository } from 'typeorm';
 
@@ -13,6 +14,34 @@ class ProductsRepository implements IProductsRepository {
     this.repository = AppDataSource.getRepository(Product);
   }
 
+  public async list({
+    category_id,
+    offset,
+    limit,
+  }: IListProductsDTO): Promise<Product[]> {
+    const products = await this.repository.find({
+      where: { category_id },
+      skip: offset,
+      take: limit,
+      relations: ['category'],
+    });
+    return products;
+  }
+
+  public async findAndCount({
+    category_id,
+    offset,
+    limit,
+  }: IListProductsDTO): Promise<[Product[], number]> {
+    const [products, total] = await this.repository.findAndCount({
+      where: { category_id },
+      skip: offset,
+      take: limit,
+      relations: ['category'],
+    });
+    return [products, total];
+  }
+
   public async delete(id: string): Promise<void> {
     await this.repository.delete(id);
   }
@@ -25,20 +54,6 @@ class ProductsRepository implements IProductsRepository {
   public async findById(id: string): Promise<Product | null> {
     const product = await this.repository.findOne({ where: { id } });
     return product;
-  }
-
-  public async list(
-    category_id: string,
-    offset: number,
-    limit: number,
-  ): Promise<Product[]> {
-    const products = await this.repository.find({
-      where: { category_id },
-      skip: offset,
-      take: limit,
-    });
-
-    return products;
   }
 
   public async create({
