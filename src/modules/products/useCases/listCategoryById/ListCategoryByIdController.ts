@@ -4,7 +4,7 @@ import { z } from 'zod';
 
 import { ListCategoryByIdUseCase } from './ListCategoryByIdUseCase';
 
-class ListProductsByIdController {
+class ListCategoryByIdController {
   async handle(request: Request, response: Response): Promise<Response> {
     const { id } = z
       .object({
@@ -20,4 +20,4 @@ class ListProductsByIdController {
   }
 }
 
-export { ListProductsByIdController };
+export { ListCategoryByIdController };
