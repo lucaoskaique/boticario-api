@@ -13,6 +13,10 @@ class AddressesRepository implements IAddressesRepository {
     this.repository = AppDataSource.getRepository(Address);
   }
 
+  async delete(id: string): Promise<void> {
+    await this.repository.delete(id);
+  }
+
   async create({
     cep,
     street,

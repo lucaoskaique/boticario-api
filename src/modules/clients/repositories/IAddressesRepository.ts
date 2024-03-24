@@ -6,6 +6,7 @@ interface IAddressesRepository {
   list: () => Promise<Address[]> | [];
   update: (data: Address) => Promise<Address>;
   findById: (id: string) => Promise<Address | null>;
+  delete: (id: string) => Promise<void>;
 }
 
 export type { IAddressesRepository };
