@@ -7,6 +7,7 @@ interface IOrdersRepository {
   list: () => Promise<Order[]>;
   findLastOrderOfYear: (year: number) => Promise<Order | null>;
   findAndCount: (id: string) => Promise<[Order[], number]>;
+  delete: (id: string) => Promise<void>;
 }
 
 export type { IOrdersRepository };
