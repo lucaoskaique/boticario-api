@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig", // Junta ao manifesto p/ compilação.
+  "include": [
+    "src" // Diretórios a serem incluídos na compilação.
+  ],
+  "exclude": [
+    "./test", // Diretórios a serem excluídos na compilação.
+    "node_modules"
+  ]
+}
