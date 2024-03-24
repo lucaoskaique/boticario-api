@@ -1,6 +1,7 @@
 import uploadConfig from '@config/upload';
 import { CreateProductController } from '@modules/products/useCases/createProduct/CreateProductController';
 import { DeleteProductController } from '@modules/products/useCases/deleteProduct/DeleteProductController';
+import { ListProductsByIdController } from '@modules/products/useCases/listProductById/ListProductsByIdController';
 import { ListProductsController } from '@modules/products/useCases/listProducts/ListProductsController';
 import { UpdateProductController } from '@modules/products/useCases/updateProduct/UpdateProductController';
 import { UpdateProductImageController } from '@modules/products/useCases/updateProductImage/UpdateProductImageController';
@@ -21,7 +22,10 @@ const deleteProductController = new DeleteProductController();
 
 const updateProductImageController = new UpdateProductImageController();
 
+const listProductsByIdController = new ListProductsByIdController();
+
 productsRoutes.post('/', createProductController.handle);
+productsRoutes.get('/:id', listProductsByIdController.handle);
 productsRoutes.get('/list', listProductsController.handle);
 productsRoutes.patch('/:id', updateProductController.handle);
 productsRoutes.delete('/:id', deleteProductController.handle);
