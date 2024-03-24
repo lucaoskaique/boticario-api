@@ -1,63 +1,133 @@
-## Requisitos Não Funcionais (RN)
+## Requisitos Não Funcionais (RNF)
 
-- [ ] RN1: A aplicação deve ser escalável para lidar com um grande número de requisições simultâneas.
-- [ ] RN2: A aplicação deve ser segura, protegendo os dados sensíveis dos usuários.
-- [ ] RN3: A aplicação deve ser de fácil manutenção e extensibilidade.
-- [ ] RN4: A aplicação deve ser compatível com diferentes navegadores e dispositivos.
-- [ ] RN5: A aplicação deve ter uma boa performance, com tempos de resposta rápidos.
+- [X] RNF1: A aplicação deve ter uma boa performance, com tempos de resposta rápidos.
+- [X] RNF2: A aplicação deve ser resiliente, capaz de se recuperar de falhas.
+- [X] RNF3: Código da API em repositório Git público.
+- [ ] RNF4: Documentação da aplicação no Git (README).
+- [ ] RNF5: Aplicação rodando no ambiente local do candidato.
+- [ ] RNF6: Swagger implementado para acesso à documentação da API.
+- [ ] RNF7: Arquivo SQL contendo o DDL final e alguns "inserts" de dados de exemplo.
+- [ ] RNF8: Coleção do Postman ou Insomnia, em formato JSON, para testes na API.
+- [ ] RNF9: Testes unitários e de integração implementados.
+
 
 ## Requisitos Funcionais (RF)
-
 ### Entidade: Clientes
-
 #### CRUD (Create, Read, Update, Delete)
 
-- [ ] RF1: Criar um novo cliente.
-- [ ] RF2: Ler informações de um cliente existente.
-- [ ] RF3: Atualizar informações de um cliente existente.
-- [ ] RF4: Excluir um cliente existente.
+- [X] RF1: Criar um novo cliente.
+  - [x] Criar controller
+  - [x] Criar use case
+  - [x] Criar repository
+- [X] RF2: Ler informações de um cliente existente.
+  - [x] Criar controller
+  - [x] Criar use case
+  - [x] Criar repository
+- [X] RF3: Atualizar informações de um cliente existente.
+  - [x] Criar controller
+  - [x] Criar use case
+  - [x] Criar repository
+- [X] RF4: Excluir um cliente existente.
+  - [x] Criar controller
+  - [x] Criar use case
+  - [x] Criar repository
 
 ### Entidade: Addresses
-
 #### CRUD (Create, Read, Update, Delete)
 
-- [ ] RF5: Criar um novo endereço.
-- [ ] RF6: Ler informações de um endereço existente.
-- [ ] RF7: Atualizar informações de um endereço existente.
-- [ ] RF8: Excluir um endereço existente.
+- [X] RF5: Criar um novo endereço.
+  - [x] Criar controller
+  - [x] Criar use case
+  - [x] Criar repository
+- [X] RF6: Ler informações de um endereço existente.
+  - [x] Criar controller
+  - [x] Criar use case
+  - [x] Criar repository
+- [X] RF7: Atualizar informações de um endereço existente.
+  - [x] Criar controller
+  - [x] Criar use case
+  - [x] Criar repository
+- [X] RF8: Excluir um endereço existente.
+  - [x] Criar controller
+  - [x] Criar use case
+  - [x] Criar repository
 
 ### Entidade: Orders
-
 #### CRUD (Create, Read, Update, Delete)
 
-- [ ] RF9: Criar um novo pedido.
-- [ ] RF10: Ler informações de um pedido existente.
+- [X] RF9: Criar um novo pedido.
+  - [x] Criar controller
+  - [x] Criar use case
+  - [x] Criar repository
+- [X] RF10: Ler informações de um pedido existente.
+  - [x] Criar controller
+  - [x] Criar use case
+  - [x] Criar repository
 - [ ] RF11: Atualizar informações de um pedido existente.
+  - [] Criar controller
+  - [] Criar use case
+  - [] Criar repository
 - [ ] RF12: Excluir um pedido existente.
+  - [] Criar controller
+  - [] Criar use case
+  - [] Criar repository
 
 ### Entidade: Products
-
 #### CRUD (Create, Read, Update, Delete)
 
-- [ ] RF13: Criar um novo produto.
-- [ ] RF14: Ler informações de um produto existente.
-- [ ] RF15: Atualizar informações de um produto existente.
-- [ ] RF16: Excluir um produto existente.
+- [X] RF13: Criar um novo produto.
+  - [X] Criar controller
+  - [X] Criar use case
+  - [X] Criar repository
+- [X] RF14: Ler informações de um produto existente.
+  - [X] Criar controller
+  - [X] Criar use case
+  - [X] Criar repository
+- [X] RF15: Atualizar informações de um produto existente.
+  - [X] Criar controller
+  - [X] Criar use case
+  - [X] Criar repository
+- [X] RF16: Excluir um produto existente.
+  - [X] Criar controller
+  - [X] Criar use case
+  - [X] Criar repository
 
 ### Entidade: Categories
-
 #### CRUD (Create, Read, Update, Delete)
 
-- [ ] RF17: Criar uma nova categoria.
-- [ ] RF18: Ler informações de uma categoria existente.
-- [ ] RF19: Atualizar informações de uma categoria existente.
-- [ ] RF20: Excluir uma categoria existente.
+- [X] RF17: Criar uma nova categoria.
+  - [] Criar controller
+  - [] Criar use case
+  - [] Criar repository
+- [X] RF18: Ler informações de uma categoria existente.
+  - [] Criar controller
+  - [] Criar use case
+  - [] Criar repository
+- [X] RF19: Atualizar informações de uma categoria existente.
+  - [] Criar controller
+  - [] Criar use case
+  - [] Criar repository
+- [X] RF20: Excluir uma categoria existente.
+  - [] Criar controller
+  - [] Criar use case
+  - [] Criar repository
 
 ### Entidade: ProductOrders
-
 #### CRUD (Create, Read, Update, Delete)
 
 - [ ] RF21: Criar uma nova relação entre produto e pedido.
+  - [] Criar controller
+  - [] Criar use case
+  - [] Criar repository
 - [ ] RF22: Ler informações de uma relação entre produto e pedido existente.
+  - [] Criar controller
+  - [] Criar use case
+  - [] Criar repository
 - [ ] RF23: Atualizar informações de uma relação entre produto e pedido existente.
+  - [] Criar controller
+  - [] Criar use case
+  - [] Criar repository
 - [ ] RF24: Excluir uma relação entre produto e pedido existente.
+  - [] Criar controller
+  - [] Criar use case
+  - [] Criar repository
