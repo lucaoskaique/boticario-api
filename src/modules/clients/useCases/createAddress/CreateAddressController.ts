@@ -19,10 +19,11 @@ class CreateAddressController {
     const { cep, city, complement, neighborhood, street, street_number, uf } =
       createAddressBodySchema.parse(request.body);
 
+    let address = {};
     try {
       const createAddressUseCase = container.resolve(CreateAddressUseCase);
 
-      await createAddressUseCase.execute({
+      address = await createAddressUseCase.execute({
         cep,
         city,
         complement,
@@ -37,7 +38,7 @@ class CreateAddressController {
         return response.status(500).json({ errorMessage: error.message });
       }
     }
-    return response.status(201).send();
+    return response.json(address);
   }
 }
 
