@@ -14,6 +14,7 @@ interface IProductsRepository {
     image_url,
   }: ICreateProductDTO) => Promise<void>;
   update: (product: Product) => Promise<void>;
+  delete: (id: string) => Promise<void>;
 }
 
 export type { IProductsRepository };
