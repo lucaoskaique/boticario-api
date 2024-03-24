@@ -27,8 +27,17 @@ class ProductsRepository implements IProductsRepository {
     return product;
   }
 
-  public async list(): Promise<Product[]> {
-    const products = await this.repository.find();
+  public async list(
+    category_id: string,
+    offset: number,
+    limit: number,
+  ): Promise<Product[]> {
+    const products = await this.repository.find({
+      where: { category_id },
+      skip: offset,
+      take: limit,
+    });
+
     return products;
   }
 
