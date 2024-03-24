@@ -9,18 +9,24 @@ class CreateOrderController {
       client_id: z.string(),
       amount: z.number(),
       order_date: z.date(),
-      status: z.string(),
+      products: z.array(
+        z.object({
+          product_id: z.string(),
+          quantity: z.number(),
+          product_price: z.number(),
+        }),
+      ),
     });
-    const { client_id, amount, order_date, status } =
-      createOrderBodySchema.parse(request.body);
+    const { client_id, order_date, products } = createOrderBodySchema.parse(
+      request.body,
+    );
 
     try {
       const createOrderUseCase = container.resolve(CreateOrderUseCase);
       await createOrderUseCase.execute({
         client_id,
-        amount,
         order_date,
-        status,
+        products,
       });
     } catch (error) {
       if (error instanceof Error) {
