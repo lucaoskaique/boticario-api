@@ -59,6 +59,18 @@ class OrdersRepository implements IOrdersRepository {
 
     return order;
   }
+
+  async findAndCount(id: string): Promise<[Order[], number]> {
+    const [orders, count] = await this.repository.findAndCount({
+      where: {
+        client_id: id,
+      },
+      order: { id: 'DESC' },
+      relations: ['address', 'productOrders', 'productOrders.product'],
+    });
+
+    return [orders, count];
+  }
 }
 
 export { OrdersRepository };
