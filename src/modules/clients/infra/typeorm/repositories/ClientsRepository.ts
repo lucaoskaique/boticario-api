@@ -44,7 +44,9 @@ class ClientsRepository implements IClientsRepository {
   }
 
   async findById(id: string): Promise<Client | null> {
-    const client = await this.repository.findOne({ where: { id } });
+    const client = await this.repository.findOne({
+      where: { id },
+    });
 
     return client;
   }
