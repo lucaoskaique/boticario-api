@@ -6,6 +6,7 @@ interface IOrdersRepository {
   create: (data: ICreateOrderDTO) => Promise<Order | undefined>;
   list: () => Promise<Order[]>;
   findLastOrderOfYear: (year: number) => Promise<Order | null>;
+  findAndCount: (id: string) => Promise<[Order[], number]>;
 }
 
 export type { IOrdersRepository };
