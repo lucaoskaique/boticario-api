@@ -7,6 +7,7 @@ interface IClientsRepository {
   findById: (id: string) => Promise<Client | null>;
   list: () => Promise<Client[]> | [];
   update: (data: Client) => Promise<Client>;
+  delete: (id: string) => Promise<boolean>;
 }
 
 export type { IClientsRepository };

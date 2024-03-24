@@ -13,6 +13,11 @@ class ClientsRepository implements IClientsRepository {
     this.repository = AppDataSource.getRepository(Client);
   }
 
+  async delete(id: string): Promise<boolean> {
+    const deleted = await this.repository.delete(id);
+    return deleted.affected === 1;
+  }
+
   async create({
     username,
     birth_date,
