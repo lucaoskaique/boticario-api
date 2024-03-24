@@ -10,7 +10,7 @@ interface IUpdateClientImageDTO {
 }
 
 @injectable()
-class UpdateClientImageUseCase {
+class UpdateProductImageUseCase {
   constructor(
     @inject('ProductsRepository')
     private productsRepository: IProductsRepository,
@@ -43,4 +43,4 @@ class UpdateClientImageUseCase {
   }
 }
 
-export { UpdateClientImageUseCase };
+export { UpdateProductImageUseCase };
