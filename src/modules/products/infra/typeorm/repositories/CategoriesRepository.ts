@@ -13,6 +13,17 @@ class CategoriesRepository implements ICategoriesRepository {
     this.repository = AppDataSource.getRepository(Category);
   }
 
+  async findById(id: string): Promise<Category | null> {
+    const category = await this.repository.findOne({ where: { id } });
+    return category ?? null;
+  }
+
+  update: (category: Category) => Promise<void> = async (
+    category: Category,
+  ) => {
+    await this.repository.save(category);
+  };
+
   async create({ name, description }: ICreateCategoryDTO): Promise<void> {
     const category = this.repository.create({ name, description });
 
