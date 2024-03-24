@@ -2,7 +2,7 @@ import { type Product } from '@modules/products/infra/typeorm/entities/Product';
 import { IProductsRepository } from '@modules/products/repositories/IProductsRepository';
 import { inject, injectable } from 'tsyringe';
 
-import { IStorageProvider } from '@shared/providers/IStorageProvider';
+import { IStorageProvider } from '@shared/container/providers/StorageProvider/IStorageProvider';
 
 interface IUpdateClientImageDTO {
   product_id: string;
