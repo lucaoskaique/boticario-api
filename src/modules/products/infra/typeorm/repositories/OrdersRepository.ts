@@ -1,6 +1,6 @@
 import { type ICreateOrderDTO } from '@modules/products/dtos/ICreateOrderDTO';
 import { type IOrdersRepository } from '@modules/products/repositories/IOrdersRepository';
-import { type Repository } from 'typeorm';
+import { Between, type Repository } from 'typeorm';
 
 import { AppDataSource } from '@shared/infra/typeorm/data-source';
 
@@ -19,16 +19,19 @@ class OrdersRepository implements IOrdersRepository {
     order_date,
     order_number,
     status,
-  }: ICreateOrderDTO): Promise<void> {
-    const order = this.repository.create({
-      amount,
-      client_id,
-      order_date,
-      order_number,
-      status,
+  }: ICreateOrderDTO): Promise<Order | undefined> {
+    let newOrder;
+    await AppDataSource.transaction(async (transactionEntityManager) => {
+      newOrder = transactionEntityManager.create(Order, {
+        amount,
+        client_id,
+        order_date,
+        order_number,
+        status,
+      });
+      await transactionEntityManager.save(newOrder);
     });
-
-    await this.repository.save(order);
+    return newOrder;
   }
 
   async list(): Promise<Order[]> {
@@ -38,6 +41,22 @@ class OrdersRepository implements IOrdersRepository {
 
   async findById(id: string): Promise<Order | null> {
     const order = await this.repository.findOne({ where: { id } });
+    return order;
+  }
+
+  async findLastOrderOfYear(year: number): Promise<Order | null> {
+    const startDate = new Date(year, 0, 1); // Primeiro dia do ano
+    const endDate = new Date(year + 1, 0, 1); // Primeiro dia do próximo ano
+
+    const order = await this.repository.findOne({
+      where: {
+        order_date: Between(startDate, endDate),
+      },
+      order: {
+        order_date: 'DESC',
+      },
+    });
+
     return order;
   }
 }
