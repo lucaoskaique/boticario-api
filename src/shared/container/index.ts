@@ -10,6 +10,9 @@ import { type IOrdersRepository } from '@modules/products/repositories/IOrdersRe
 import { type IProductsRepository } from '@modules/products/repositories/IProductsRepository';
 import { container } from 'tsyringe';
 
+import { DiskStorageProvider } from '@shared/providers/DiskStorageProvider';
+import { type IStorageProvider } from '@shared/providers/IStorageProvider';
+
 container.registerSingleton<IClientsRepository>(
   'ClientsRepository',
   ClientsRepository,
@@ -33,4 +36,9 @@ container.registerSingleton<IProductsRepository>(
 container.registerSingleton<IOrdersRepository>(
   'OrdersRepository',
   OrdersRepository,
+);
+
+container.registerSingleton<IStorageProvider>(
+  'StorageProvider',
+  DiskStorageProvider,
 );
