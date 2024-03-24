@@ -9,5 +9,8 @@ const listCategoryController = new ListCategoryController();
 
 categoriesRoutes.post('/', createCategoryController.handle);
 categoriesRoutes.get('/list', listCategoryController.handle);
+categoriesRoutes.get('/:id', listCategoryController.handle);
+categoriesRoutes.delete('/:id', listCategoryController.handle);
+categoriesRoutes.patch('/:id', listCategoryController.handle);
 
 export { categoriesRoutes };
