@@ -51,6 +51,18 @@ describe('CreateClientUseCase', () => {
   });
 
   it('should not be able to create a client with an existing username', async () => {
+    const createAddressDTO = {
+      street: 'Rua Teste',
+      street_number: 123,
+      neighborhood: 'Bairro Teste',
+      city: 'Cidade Teste',
+      uf: 'rs',
+      cep: '12345-678',
+      complement: 'Complemento Teste',
+    };
+
+    const address = await addressesRepositoryInMemory.create(createAddressDTO);
+
     const createClientDTO: ICreateClientDTO = {
       username: 'john_doe',
       email: 'john@example.com',
@@ -58,7 +70,8 @@ describe('CreateClientUseCase', () => {
       cpf: '12345678901',
       phone: '1234567890',
       birth_date: new Date('1990-01-01'),
-      address_id: 'address_id',
+      address_id: address.id,
+      name: 'valid-name',
     };
 
     await createClientUseCase.execute(createClientDTO);
