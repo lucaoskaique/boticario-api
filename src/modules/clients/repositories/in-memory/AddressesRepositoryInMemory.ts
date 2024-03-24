@@ -5,14 +5,30 @@ import { type IAddressesRepository } from '../IAddressesRepository';
 class AddressesRepositoryInMemory implements IAddressesRepository {
   private addresses: Address[] = [];
 
-  async create(data: ICreateAddressDTO): Promise<void> {
+  async create({
+    cep,
+    street,
+    street_number,
+    complement,
+    neighborhood,
+    city,
+    uf,
+  }: ICreateAddressDTO): Promise<Address> {
     const address = new Address();
 
     Object.assign(address, {
-      data,
+      cep,
+      street,
+      street_number,
+      complement,
+      neighborhood,
+      city,
+      uf,
     });
 
     this.addresses.push(address);
+
+    return address;
   }
 
   async list(): Promise<Address[]> {
