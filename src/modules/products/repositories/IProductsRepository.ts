@@ -1,11 +1,7 @@
 import { type ICreateProductDTO } from '../dtos/ICreateProductDTO';
+import { type IListProductsDTO } from '../dtos/IListProductsDTO';
 import { type Product } from '../infra/typeorm/entities/Product';
 
-interface IListProductsDTO {
-  category_id?: string | undefined;
-  limit?: number | undefined;
-  offset?: number | undefined;
-}
 interface IProductsRepository {
   findByName: (name: string) => Promise<Product | null>;
   findById: (id: string) => Promise<Product | null>;
