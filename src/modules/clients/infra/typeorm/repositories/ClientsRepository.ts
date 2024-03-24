@@ -27,7 +27,7 @@ class ClientsRepository implements IClientsRepository {
     phone,
     address_id,
     name,
-  }: ICreateClientDTO): Promise<void> {
+  }: ICreateClientDTO): Promise<Client> {
     const client = this.repository.create({
       username,
       birth_date,
@@ -40,6 +40,8 @@ class ClientsRepository implements IClientsRepository {
     });
 
     await this.repository.save(client);
+
+    return client;
   }
 
   async findByUsername(username: string): Promise<Client | null> {
