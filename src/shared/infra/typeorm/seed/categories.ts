@@ -16,7 +16,7 @@ async function create() {
   ('${uuidV4()}', 'Category 2', 'Description Category 2', 'now()'),
   ('${uuidV4()}', 'Category 3', 'Description Category 3', 'now()'),
   ('${uuidV4()}', 'Category 4', 'Description Category 4', 'now()'),
-  ('${uuidV4()}', 'Category 5', 'Description Category 5', 'now()'),
+  ('${uuidV4()}', 'Category 5', 'Description Category 5', 'now()')
   `;
   await connection.query(query);
 
