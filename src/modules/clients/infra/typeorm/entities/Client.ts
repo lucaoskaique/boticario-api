@@ -1,9 +1,11 @@
+import { Order } from '@modules/products/infra/typeorm/entities/Order';
 import {
   Column,
   CreateDateColumn,
   Entity,
   JoinColumn,
   ManyToOne,
+  OneToMany,
   PrimaryColumn,
   UpdateDateColumn,
 } from 'typeorm';
@@ -40,6 +42,9 @@ class Client {
   @ManyToOne(() => Address)
   @JoinColumn({ name: 'address_id' })
   address: Address;
+
+  @OneToMany(() => Order, (order) => order.client)
+  orders?: Order[];
 
   @Column('varchar')
   address_id: string;
