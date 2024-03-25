@@ -2,6 +2,8 @@ import { type Request, type Response } from 'express';
 import { container } from 'tsyringe';
 import { z } from 'zod';
 
+import { AppError } from '@shared/errors/AppError';
+
 import { CreateOrderUseCase } from './CreateOrderUseCase';
 class CreateOrderController {
   async handle(request: Request, response: Response): Promise<Response> {
@@ -29,7 +31,7 @@ class CreateOrderController {
         products,
       });
     } catch (error) {
-      if (error instanceof Error) {
+      if (error instanceof AppError) {
         return response.status(500).json({ errorMessage: error.message });
       }
     }
