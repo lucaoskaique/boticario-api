@@ -7,8 +7,8 @@ import { AppDataSource } from '../data-source';
 async function create() {
   const connection = await AppDataSource.initialize();
 
-  await connection.query('DELETE FROM addresses');
   await connection.query('DELETE FROM clients');
+  await connection.query('DELETE FROM addresses');
 
   const addresses1Id = uuidV4();
   const addresses2Id = uuidV4();
@@ -34,7 +34,7 @@ async function create() {
   const clientsQuery = `
   INSERT INTO clients(id, name, email, username, cpf, phone, birth_date, address_id, created_at, updated_at, password)
   VALUES
-  ('${uuidV4()}', 'Client 1', 'client1@email.com', 'client1', '12345678901', '99999999999', '1990-01-01', '${addresses1Id}', 'now()', 'now()', '${password1}'),
+  ('${uuidV4()}', 'Client 1', 'client1@email.com', 'client1', '12345678901', '99999999999', '01-01-1990', '${addresses1Id}', 'now()', 'now()', '${password1}'),
   ('${uuidV4()}', 'Client 2', 'client2@email.com', 'client2', '12345678902', '99999999998', '1990-01-02', '${addresses2Id}', 'now()', 'now()', '${password2}'),
   ('${uuidV4()}', 'Client 3', 'client3@email.com', 'client3', '12345678903', '99999999997', '1990-01-03', '${addresses3Id}', 'now()', 'now()', '${password3}'),
   ('${uuidV4()}', 'Client 4', 'client4@email.com', 'client4', '12345678904', '99999999996', '1990-01-04', '${addresses4Id}', 'now()', 'now()', '${password4}')
