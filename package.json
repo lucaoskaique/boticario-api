@@ -8,15 +8,17 @@
     "dev": "tsx watch src/shared/infra/http/server.ts",
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
     "typeorm:create": "ts-node-dev ./node_modules/typeorm/cli.js  migration:create",
-    "typeorm:run": "ts-node-dev ./node_modules/typeorm/cli.js -d ./src/typeorm/data-source.ts migration:run",
-    "typeorm:show": "ts-node-dev ./node_modules/typeorm/cli.js -d ./src/typeorm/data-source.ts migration:show",
+    "typeorm:run": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js -d ./src/shared/infra/typeorm/data-source.ts migration:run",
+    "typeorm:show": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js -d ./src/shared/infra/typeorm/data-source.ts migration:show",
     "start": "node build/server.js",
     "build": "tsup src --out-dir build",
     "test": "glob -c \"node --loader tsx --no-warnings --test\" \"./src/modules/**/useCase/**/*.test.ts\"",
     "test:jest": "cross-env NODE_ENV=test jest --runInBand --detectOpenHandles",
     "seed:products": "ts-node-dev -r tsconfig-paths/register  src/shared/infra/typeorm/seed/productCategories.ts",
     "seed:clients": "ts-node-dev -r tsconfig-paths/register  src/shared/infra/typeorm/seed/clientAddresses.ts",
-    "seed": "yarn seed:products && yarn seed:clients"
+    "seed:alltables": "ts-node-dev -r tsconfig-paths/register  src/shared/infra/typeorm/seed/allTablesSeed.ts",
+    "seed:clean": "ts-node-dev -r tsconfig-paths/register  src/shared/infra/typeorm/seed/cleanTables.ts",
+    "seed": "yarn seed:clean && yarn seed:products && yarn seed:clients && yarn seed:alltables"
   },
   "dependencies": {
     "aws-sdk": "^2.1584.0",
