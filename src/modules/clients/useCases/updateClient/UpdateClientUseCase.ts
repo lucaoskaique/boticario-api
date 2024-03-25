@@ -6,12 +6,11 @@ import { AppError } from '@shared/errors/AppError';
 
 interface IUpdateClientDTO {
   id: string;
-  name: string;
-  email: string;
-  password: string;
-  phone: string;
-  birth_date: Date;
-  address_id: string;
+  name?: string;
+  email?: string;
+  phone?: string;
+  birth_date?: Date;
+  address_id?: string;
 }
 
 @injectable()
