@@ -6,7 +6,7 @@ import swaggerUi from 'swagger-ui-express';
 
 import { routes } from '@shared/infra/http/routes';
 
-import swaggerFile from '../../../swagger.json';
+import swaggerFile from '../../../swagger-output.json';
 import 'reflect-metadata';
 import 'express-async-errors';
 import '@shared/container';

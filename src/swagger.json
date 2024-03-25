@@ -1,11 +1,11 @@
 {
-  "openapi": "3.0.0",
+  "openapi": "3.0.3",
   "info": {
-    "title": "RentX Documentation",
-    "description": "This is an API Rent",
+    "title": "BoticarioApi Documentation",
+    "description": "This is an API Boticario",
     "version": "1.0.0",
     "contact": {
-      "email":"dani@rocketseat.com.br"
+      "email":"me@lucaskaique.com.br"
     }
   },
   "paths": {
@@ -109,25 +109,25 @@
       }
     }
   },
-  "definitions": {
-    "Category": {
-      "type": "object",
-      "properties": {
-        "name": {
-          "type": "string"
-        },
-        "description": {
-          "type": "string"
-        }
-      }
-    }
-  },
   "components": {
     "securitySchemes": {
       "bearerAuth": {
         "type": "http",
         "scheme": "bearer",
         "bearerFormat": "JWT"
+      }
+    },
+    "schemas": {
+      "Category": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
       }
     }
   }
