@@ -2,12 +2,15 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  JoinColumn,
   ManyToOne,
+  OneToMany,
   PrimaryColumn,
   UpdateDateColumn,
 } from 'typeorm';
 import { v4 as uuidV4 } from 'uuid';
 
+import { Client } from '../../../../clients/infra/typeorm/entities/Client';
 import { ProductOrder } from './ProductOrder';
 
 export enum OrderStatus {
@@ -48,8 +51,12 @@ class Order {
   @UpdateDateColumn()
   updated_at: Date;
 
+  @ManyToOne(() => Client, (client) => client.orders)
+  @JoinColumn({ name: 'client_id' })
+  client?: Client;
+
   // Relacionamento com ProductOrder
-  @ManyToOne(() => ProductOrder, (productOrder) => productOrder.order)
+  @OneToMany(() => ProductOrder, (productOrder) => productOrder.order)
   productOrders?: ProductOrder[];
 
   constructor() {
