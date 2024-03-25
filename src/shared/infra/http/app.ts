@@ -11,10 +11,13 @@ import 'reflect-metadata';
 import 'express-async-errors';
 import '@shared/container';
 import { errorHandler } from './middlewares/errors';
+import rateLimiter from './middlewares/rateLimiter';
 
 const app = express();
 
 app.use(express.json());
+
+app.use(rateLimiter);
 
 app.use(cors());
 
