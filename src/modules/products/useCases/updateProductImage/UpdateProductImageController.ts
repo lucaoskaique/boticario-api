@@ -14,7 +14,11 @@ class UpdateProductImageController {
       })
       .parse(request.params);
 
-    const image = request.file?.filename!;
+    console.log('ID ===>', id);
+
+    const image = request.file;
+
+    if (!image) return response.status(400).json({ message: 'no image' });
 
     const updateProductImageUseCase = container.resolve(
       UpdateProductImageUseCase,
@@ -22,10 +26,10 @@ class UpdateProductImageController {
 
     await updateProductImageUseCase.execute({
       product_id: id,
-      image_file: image,
+      image_file: image.filename,
     });
 
-    return response.status(204).send();
+    return response.status(204).send(image);
   }
 }
 
