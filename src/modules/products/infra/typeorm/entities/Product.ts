@@ -32,7 +32,7 @@ class Product {
 
   @ManyToOne(() => Category)
   @JoinColumn({ name: 'category_id' })
-  category: Category;
+  category?: Category;
 
   @Column('varchar')
   category_id: string;
