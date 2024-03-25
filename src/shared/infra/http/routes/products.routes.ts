@@ -26,17 +26,17 @@ const listProductsByIdController = new ListProductsByIdController();
 
 productsRoutes.post('/', createProductController.handle);
 
-productsRoutes.get('/:id', listProductsByIdController.handle);
+productsRoutes.get('/', listProductsController.handle);
 
-productsRoutes.get('/list', listProductsController.handle);
+productsRoutes.get('/:id', listProductsByIdController.handle);
 
 productsRoutes.patch('/:id', updateProductController.handle);
 
 productsRoutes.delete('/:id', deleteProductController.handle);
 
 productsRoutes.patch(
-  '/image',
-  upload.single('avatar'),
+  '/image/:id',
+  upload.single('file'),
   updateProductImageController.handle,
 );
 
