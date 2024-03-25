@@ -2,6 +2,8 @@ import { type Request, type Response } from 'express';
 import { container } from 'tsyringe';
 import { z } from 'zod';
 
+import { AppError } from '@shared/errors/AppError';
+
 import { ListOrderByIdUseCase } from './ListOrderByIdUsecase';
 
 class ListOrderByIdController {
@@ -12,10 +14,16 @@ class ListOrderByIdController {
       })
       .parse(request.params);
 
-    const listOrderByIdUseCase = container.resolve(ListOrderByIdUseCase);
+    let order;
+    try {
+      const listOrderByIdUseCase = container.resolve(ListOrderByIdUseCase);
 
-    const order = await listOrderByIdUseCase.execute(id);
-
+      order = await listOrderByIdUseCase.execute(id);
+    } catch (error) {
+      if (error instanceof AppError) {
+        return response.status(400).json({ error: error.message });
+      }
+    }
     return response.json(order);
   }
 }
