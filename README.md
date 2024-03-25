@@ -1,3 +1,56 @@
+# Nome do Projeto
+
+Boticário API - API para gerenciamento de clientes, pedidos, produtos, orders e categorias.
+
+## Pré-requisitos
+
+Antes de começar, certifique-se de ter o Node.js e o Docker instalados em sua máquina.
+
+- Node.js 20.11.0 ou superior
+- Docker
+
+## Como rodar o projeto
+
+1. Clone o repositório para a sua máquina local usando 
+```bash
+git clone 
+```	
+
+2. Navegue até o diretório do projeto.
+```bash
+cd boticario-api
+```
+
+3. Instale as dependências do projeto com o comando:
+
+```bash
+yarn install
+```	
+
+4. Inicie os serviços necessários usando o Docker Compose:
+```bash
+docker-compose up -d
+```	
+5. Execute as migrações do TypeORM:
+```bash
+yarn typeorm-run
+```	
+6. Popule o banco de dados com dados iniciais:
+```bash
+yarn seed
+```	
+7. Inicie o servidor de desenvolvimento:
+```bash
+yarn dev
+```	
+Agora você deve ter o servidor rodando em http://localhost:3000.
+
+8. Testes
+Para rodar os testes, use o comando:
+```bash
+yarn test
+```	
+
 ## Requisitos Não Funcionais (RNF)
 
 - [X] RNF1: A aplicação deve ter uma boa performance, com tempos de resposta rápidos.
