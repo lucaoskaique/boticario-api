@@ -17,9 +17,8 @@ class ListProductsUseCase {
     private productsRepository: IProductsRepository,
   ) {}
 
-  async execute({ category_id, limit, offset }: IRequest): Promise<IResponse> {
+  async execute({ limit, offset }: IRequest): Promise<IResponse> {
     const [products, count] = await this.productsRepository.findAndCount({
-      category_id,
       limit,
       offset,
     });
